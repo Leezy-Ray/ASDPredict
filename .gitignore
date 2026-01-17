@@ -1,0 +1,22 @@
+# 数据文件
+./craddock_2011_parcellations.tar.gz
+./craddock_extracted
+./checkpoints
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
