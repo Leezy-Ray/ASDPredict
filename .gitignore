@@ -2,6 +2,8 @@
 ./craddock_2011_parcellations.tar.gz
 ./craddock_extracted
 ./checkpoints
+backend/checkpoints/
+backend/processed_data.pkl
 
 # Python
 __pycache__/
@@ -13,6 +15,13 @@ __pycache__/
 dist/
 build/
 *.egg
+
+# 大文件（模型、数据）
+*.pt
+*.pkl
+*.h5
+*.hdf5
+*.ckpt
 
 # IDE
 .vscode/
