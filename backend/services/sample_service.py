@@ -20,9 +20,11 @@ class SampleService:
             pkl_path: processed_data.pkl文件路径
         """
         if pkl_path is None:
-            # 默认路径：backend/processed_data.pkl
+            # 默认路径：data/processed_data.pkl
             API_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-            pkl_path = os.path.join(API_ROOT, 'processed_data.pkl')
+            PROJECT_ROOT = os.path.dirname(API_ROOT)
+            DATA_ROOT = os.path.join(PROJECT_ROOT, 'data')
+            pkl_path = os.path.join(DATA_ROOT, 'processed_data.pkl')
         
         self.pkl_path = pkl_path
         self._data = None

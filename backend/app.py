@@ -12,6 +12,8 @@ import traceback
 
 # API根目录
 API_ROOT = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(API_ROOT)  # 项目根目录
+DATA_ROOT = os.path.join(PROJECT_ROOT, 'data')  # 数据目录
 sys.path.insert(0, API_ROOT)
 
 from utils.data_processor import process_input_data
@@ -19,9 +21,9 @@ from services.prediction_service import PredictionService
 from services.connection_analysis_service import ConnectionAnalysisService
 from services.sample_service import get_sample_service
 
-# 配置（使用API目录内的checkpoints）
-DEFAULT_CHECKPOINT = os.path.join(API_ROOT, 'checkpoints', 'best_model.pt')
-DEFAULT_RESULTS_JSON = os.path.join(API_ROOT, 'checkpoints', 'results.json')
+# 配置（使用 data 目录内的 checkpoints）
+DEFAULT_CHECKPOINT = os.path.join(DATA_ROOT, 'checkpoints', 'best_model.pt')
+DEFAULT_RESULTS_JSON = os.path.join(DATA_ROOT, 'checkpoints', 'results.json')
 UPLOAD_FOLDER = os.path.join(API_ROOT, 'uploads')
 ALLOWED_EXTENSIONS = {'csv', 'json'}
 

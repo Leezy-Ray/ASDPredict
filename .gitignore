@@ -1,9 +1,9 @@
 # 数据文件
-./craddock_2011_parcellations.tar.gz
-./craddock_extracted
-./checkpoints
-backend/checkpoints/
-backend/processed_data.pkl
+data/checkpoints/
+data/*.pkl
+data/*.tar.gz
+data/*.nii.gz
+data/craddock_extracted/
 
 # Python
 __pycache__/

@@ -214,10 +214,17 @@ def main():
         # #endregion
         
         # Save to JSON file
-        output_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'cc200_coordinates.json')
-        frontend_public_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'web', 'public', 'cc200_coordinates.json')
+        # 保存到 data/cc200_coordinates.json（主数据源）
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        backend_dir = os.path.dirname(script_dir)
+        project_root = os.path.dirname(backend_dir)
+        data_root = os.path.join(project_root, 'data')
+        output_path = os.path.join(data_root, 'cc200_coordinates.json')
+        # 同时复制到 web/public/ 供前端访问
+        frontend_public_path = os.path.join(project_root, 'web', 'public', 'cc200_coordinates.json')
         
         print(f"Saving coordinates to: {output_path}")
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(regions, f, indent=2, ensure_ascii=False)
         
@@ -227,7 +234,7 @@ def main():
             json.dump(regions, f, indent=2, ensure_ascii=False)
         
         print(f"\nSuccessfully saved {len(regions)} CC200 regions to JSON files")
-        print(f"  - Backend: {output_path}")
+        print(f"  - Data: {output_path}")
         print(f"  - Frontend: {frontend_public_path}")
         
         # Print sample coordinates

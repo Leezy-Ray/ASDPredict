@@ -5,7 +5,12 @@ import pickle
 import numpy as np
 import os
 
-pkl_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'processed_data.pkl')
+# 更新路径到 data/processed_data.pkl
+script_dir = os.path.dirname(os.path.abspath(__file__))
+backend_dir = os.path.dirname(script_dir)
+project_root = os.path.dirname(backend_dir)
+data_root = os.path.join(project_root, 'data')
+pkl_path = os.path.join(data_root, 'processed_data.pkl')
 
 with open(pkl_path, 'rb') as f:
     data = pickle.load(f)
