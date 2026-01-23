@@ -1,6 +1,8 @@
 # ASD 脑连接预测系统
 
 基于 fMRI 数据的自闭症谱系障碍（ASD）风险评估与脑区异常连接可视化系统。
+<img width="1854" height="854" alt="image" src="https://github.com/user-attachments/assets/d70653f3-2e5e-479c-926b-bb069b404f96" />
+
 
 ## 项目结构
 
